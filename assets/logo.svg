@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" role="img" aria-label="Power logo">
+  <title>Power logo</title>
+  <circle cx="170" cy="170" r="150" fill="#F6E7A1" stroke="#6B5637" stroke-width="10"/>
+  <g stroke="#6B5637" stroke-width="6" stroke-linecap="round">
+    <line x1="88" y1="88" x2="104" y2="104"/>
+    <line x1="252" y1="88" x2="236" y2="104"/>
+    <line x1="88" y1="252" x2="104" y2="236"/>
+    <line x1="252" y1="252" x2="236" y2="236"/>
+    <line x1="52" y1="170" x2="76" y2="170"/>
+    <line x1="264" y1="170" x2="288" y2="170"/>
+  </g>
+  <polygon points="188,55 118,190 160,190 148,285 232,150 182,150"
+           fill="#E9A23B" stroke="#6B5637" stroke-width="8" stroke-linejoin="round"/>
+</svg>

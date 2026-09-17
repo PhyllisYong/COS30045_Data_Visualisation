@@ -1,0 +1,267 @@
+/* ===========================================================
+   COS30045 - Appliance Energy Consumption in Australia
+   Colour palette taken from the site logo:
+   brown outline / pale gold circle / orange lightning bolt
+   =========================================================== */
+
+:root {
+  --brown: #6b5637;
+  --brown-dark: #4a3b26;
+  --gold: #f6e7a1;
+  --gold-light: #fbf3d0;
+  --orange: #e9a23b;
+  --orange-dark: #c97a2f;
+  --text: #3c3120;
+  --white: #fffdf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+/* ---------- Header / Nav ---------- */
+
+header {
+  background-color: var(--brown);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Centre the nav in the header on wider screens, independent of the
+   logo's width, so it sits in the middle of the page rather than
+   just filling the leftover space next to the logo. */
+@media (min-width: 601px) {
+  nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--gold-light);
+}
+
+.logo-link img {
+  height: 48px;
+  width: 48px;
+  display: block;
+}
+
+.site-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: inline-block;
+  color: var(--gold-light);
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--orange);
+  color: var(--brown-dark);
+}
+
+nav a.active {
+  background-color: var(--gold);
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+/* ---------- Main content ---------- */
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.page {
+  animation: fadeIn 0.25s ease-in;
+}
+
+.page[hidden] {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  color: var(--brown);
+  border-bottom: 3px solid var(--orange);
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--brown-dark);
+}
+
+.hero {
+  background-color: var(--gold-light);
+  border: 2px solid var(--gold);
+  border-left: 6px solid var(--orange);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gold);
+  border-top: 4px solid var(--brown);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 4px rgba(107, 86, 55, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--orange-dark);
+}
+
+.stat {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brown);
+  display: block;
+}
+
+figure {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: var(--white);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: zoom-in; /* hints that clicking the chart enlarges it */
+  -webkit-user-drag: none; /* stop a click being read as a drag */
+  user-select: none;
+}
+
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.figure-grid figure {
+  margin: 1rem 0;
+}
+
+/* ---------- Chart lightbox ----------
+   A simple full-screen overlay used to show a clicked chart at a
+   larger size. Hidden by default with the [hidden] attribute, shown
+   by js/script.js when a chart image is clicked. */
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+  z-index: 100;
+}
+
+/* The [hidden] attribute is normally display:none, but our own
+   "display: flex" above has higher priority and overrides that -
+   so it needs to be restated here to actually hide the lightbox. */
+#lightbox[hidden] {
+  display: none;
+}
+
+#lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+}
+
+.placeholder-note {
+  font-size: 0.85rem;
+  color: var(--brown);
+  background-color: var(--gold-light);
+  border: 1px dashed var(--brown);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background-color: var(--brown-dark);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
