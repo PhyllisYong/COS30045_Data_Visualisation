@@ -1,11 +1,7 @@
 // Appliance Energy Watch - page script
 //
-// This file does two independent jobs:
-//   1. Page navigation  - shows/hides the Home / Televisions / About Us
-//      sections so the site behaves like a multi-page site without
-//      actually reloading the browser.
-//   2. Chart lightbox   - lets the user click any chart image on the
-//      Televisions page to view it bigger in an overlay.
+// Handles page navigation: shows/hides the Home / Televisions / About Us
+// sections so the site behaves like a multi-page site without reloading.
 
 (function () {
 
@@ -110,40 +106,5 @@
 
   // Show whichever page is in the URL on first load (or Home by default).
   showPage(pageIdFromHash());
-
-  // ===================================================================
-  // 2. CHART LIGHTBOX
-  // ===================================================================
-
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-
-  if (lightbox && lightboxImg) {
-    // Every chart on the Televisions page is a <figure><img></figure>.
-    // Clicking one copies its image into the lightbox and shows it.
-    document.querySelectorAll("figure img").forEach(function (chartImg) {
-      // Images are draggable by default, which can hijack a click as a
-      // native drag-and-drop instead - turn that off so clicks work.
-      chartImg.draggable = false;
-
-      chartImg.addEventListener("click", function () {
-        lightboxImg.src = chartImg.src;
-        lightboxImg.alt = chartImg.alt;
-        lightbox.hidden = false;
-      });
-    });
-
-    // Clicking anywhere on the dark overlay closes it again.
-    lightbox.addEventListener("click", function () {
-      lightbox.hidden = true;
-    });
-
-    // Also allow closing with the Escape key.
-    window.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        lightbox.hidden = true;
-      }
-    });
-  }
 
 })();

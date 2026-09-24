@@ -1,190 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Australian Appliance Energy Watch</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Australian Appliance Energy Watch</title>
+		<link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header>
+			<a href="#home" class="logo-link" id="logo-link">
+				<img src="assets/logo.svg" alt="Power logo" />
+				<span class="site-title">Appliance Energy Watch</span>
+			</a>
+			<nav>
+				<ul id="nav-list">
+					<li><a href="#home" data-page="home">Home</a></li>
+					<li>
+						<a href="#televisions" data-page="televisions">Televisions</a>
+					</li>
+					<li><a href="#about" data-page="about">About Us</a></li>
+				</ul>
+			</nav>
+		</header>
 
-  <header>
-    <a href="#home" class="logo-link" id="logo-link">
-      <img src="assets/logo.svg" alt="Power logo">
-      <span class="site-title">Appliance Energy Watch</span>
-    </a>
-    <nav>
-      <ul id="nav-list">
-        <li><a href="#home" data-page="home">Home</a></li>
-        <li><a href="#televisions" data-page="televisions">Televisions</a></li>
-        <li><a href="#about" data-page="about">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+		<main>
+			<!-- ================= HOME PAGE ================= -->
+			<section id="home" class="page">
+				<h1>Appliance Energy Consumption in Australia</h1>
 
-  <main>
+				<div class="hero">
+					<p>
+						Appliances such as air conditioners, fridges, televisions and washing
+						machines make up a large part of household electricity use across
+						Australia. This site looks at appliance energy consumption in the
+						Australian market, starting with televisions.
+					</p>
+				</div>
 
-    <!-- ================= HOME PAGE ================= -->
-    <section id="home" class="page">
-      <h1>Appliance Energy Consumption in Australia</h1>
+				<div class="card-grid">
+					<div class="card">
+						<h3>Biggest Energy Users</h3>
+						<span class="stat">Heating &amp; Cooling</span>
+						<p>
+							Air conditioners and heaters are usually among the largest energy
+							users in an Australian home, especially in extreme weather.
+						</p>
+					</div>
+					<div class="card">
+						<h3>Always Running</h3>
+						<span class="stat">Fridges</span>
+						<p>
+							Fridges and freezers run all day, every day, so their efficiency adds
+							up over the life of the appliance.
+						</p>
+					</div>
+					<div class="card">
+						<h3>Comparing Appliances</h3>
+						<span class="stat">Star Ratings</span>
+						<p>
+							Many appliances sold in Australia carry an Energy Rating Label so
+							buyers can compare how efficient they are.
+						</p>
+					</div>
+				</div>
+				<p class="placeholder-note">
+					This page is a general overview. The Televisions page uses the Australian
+					Government’s Energy Rating data for televisions to show detailed charts.
+				</p>
 
-      <div class="hero">
-        <p>
-          This site was built for COS30045 Data Visualisation. It's a home for the
-          data visualisations produced across the unit's tasks, starting with a look
-          at Australian televisions and how their screen technology, size and brand
-          relate to power consumption.
-        </p>
-      </div>
+				<p>
+					See <a href="#televisions" data-page="televisions">Televisions</a> for
+					the full set of charts, or
+					<a href="#about" data-page="about">About Us</a>
+					for more on the project and how it was built.
+				</p>
+			</section>
 
-      <div class="card-grid">
-        <div class="card">
-          <h3>Most Common Screen Technology</h3>
-          <span class="stat">LCD (LED)</span>
-          <p>makes up the large majority of TVs on the Australian energy rating
-            register, well ahead of standard LCD and OLED.</p>
-        </div>
-        <div class="card">
-          <h3>Most Common Screen Sizes</h3>
-          <span class="stat">55&Prime;&ndash;75&Prime;</span>
-          <p>these sizes are registered far more often than any other, with a long
-            tail of less common sizes on either side.</p>
-        </div>
-        <div class="card">
-          <h3>Brand With Most Models</h3>
-          <span class="stat">Kogan</span>
-          <p>has the largest number of registered TV models, narrowly ahead of
-            LG and Samsung.</p>
-        </div>
-      </div>
-      <p class="placeholder-note">
-        The information above is read from the charts on the Televisions page
-        and is approximate.
-      </p>
+			<!-- ================= TELEVISIONS PAGE ================= -->
+			<section id="televisions" class="page" hidden>
+				<h1>Televisions &amp; Energy Use</h1>
 
-      <p>
-        See <a href="#televisions" data-page="televisions">Televisions</a> for the
-        full set of charts, or <a href="#about" data-page="about">About Us</a>
-        for more on the project and how it was built.
-      </p>
-    </section>
+				<div class="hero">
+					<p>
+						Thinking of buying a TV? This page uses the Australian Government&rsquo;s
+						&ldquo;Energy Rating Data for household appliances &ndash; Labelled Products&rdquo;
+						dataset (Televisions), published on data.gov.au, to help everyday buyers
+						see which screen technologies, sizes and brands are on the market and
+						how much power they use. No technical knowledge needed &mdash; each
+						chart is followed by a plain-language takeaway.
+					</p>
+				</div>
 
-    <!-- ================= TELEVISIONS PAGE ================= -->
-    <section id="televisions" class="page" hidden>
-      <h1>Televisions &amp; Energy Use</h1>
+				<!-- Each question follows the same pattern:
+						question box -> chart(s) with a "Fig" caption -> answer box -->
 
-      <div class="hero">
-        <p>
-          These visualisations were built from the Australian Energy Rating registration
-          data for televisions, to answer a set of research questions about screen
-          technology, screen size, brand and power consumption.
-        </p>
-      </div>
+				<h2>What matters most when choosing a TV</h2>
+				<p>These four questions directly affect which TV you buy.</p>
 
-      <h2>1. What screen technologies are available, and which are most frequent?</h2>
-      <div class="figure-grid">
-        <figure>
-          <img src="assets/Q1_BarChart.png" alt="Bar chart of TV screen technology occurrence counts">
-        </figure>
-        <figure>
-          <img src="assets/Q1_PieChart.png" alt="Pie chart of TV screen technology share">
-        </figure>
-      </div>
-      <p>LCD (LED) is by far the most common screen technology on the register, well
-        ahead of standard LCD and OLED.</p>
+				<h3 class="question">Q1. What type of TV screen technologies are currently available in Australia and which are the most frequent?</h3>
+				<figure>
+					<img src="assets/Q1_PieChart.png" alt="Pie chart of TV screen technology share">
+					<figcaption>Fig 1a. Pie chart: how TV models split across the three screen technologies</figcaption>
+				</figure>
+				<figure>
+					<img src="assets/Q1_BarChart.png" alt="Bar chart of TV screen technology occurrence counts">
+					<figcaption>Fig 1b. Bar chart: number of TV models for each screen technology</figcaption>
+				</figure>
+				<p class="answer">Three technologies are available: LCD (LED), LCD, and OLED. LCD (LED) is the most frequent with 3797 models, followed by LCD (484) and OLED (292).</p>
 
-      <h2>2. What screen sizes are available, and which are most frequent?</h2>
-      <figure>
-        <img src="assets/Q2_BarChart.png" alt="Bar chart of TV screen size occurrence counts">
-      </figure>
-      <p>65", 75" and 85" screens are registered far more often than any other size, with
-        many smaller and larger sizes appearing only a handful of times.</p>
+				<h3 class="question">Q2. What screen sizes are available and which are most frequent?</h3>
+				<figure>
+					<img src="assets/Q2_BarChart.png" alt="Bar chart of TV screen size occurrence counts">
+					<figcaption>Fig 2. Bar chart: number of TV models at each screen size (inches)</figcaption>
+				</figure>
+				<p class="answer">The most frequent screen size is 65 inches (773 models), followed closely by 55 inches (762) and 75 inches (629). 85 inches (357) is next, and the remaining top sizes range from 130 to 282 models.</p>
 
-      <h2>3. Which brands have the largest number of models?</h2>
-      <figure>
-        <img src="assets/Q3_BarChart.png" alt="Bar chart of number of registered models by brand">
-      </figure>
-      <p>Kogan, LG and Samsung Electronics have the most registered models, with a steep
-        drop-off after the top four or five brands.</p>
+				<h3 class="question">Q3. Which brands have the largest number of models?</h3>
+				<figure>
+					<img src="assets/Q3_BarChart.png" alt="Bar chart of number of registered models by brand">
+					<figcaption>Fig 3. Bar chart: the ten brands with the most registered TV models</figcaption>
+				</figure>
+				<p class="answer">Kogan has the most models (809), followed by LG (723) and Samsung Electronics (699). Numbers then drop sharply after the top five brands, from Hisense (327) to Sylvox (134).</p>
 
-      <h2>4. Which screen technology consumes the least power?</h2>
-      <figure>
-        <img src="assets/Q4_BarChart.png" alt="Bar chart of median power consumption by screen technology">
-      </figure>
-      <p>Standard LCD panels have the lowest median power draw, while LCD (LED) and OLED
-        panels use noticeably more.</p>
+				<h3 class="question">Q4. Which type of screen technology consumes the least amount of power?</h3>
+				<figure>
+					<img src="assets/Q4_BarChart.png" alt="Bar chart of median power consumption by screen technology">
+					<figcaption>Fig 4. Bar chart: typical (median) power use of each screen technology</figcaption>
+				</figure>
+				<p class="answer">LCD consumes the least power, with a median of 71.35, compared with 106 for LCD (LED) and 112.70 for OLED. However, LCD is only about 10% of models, so it is less commonly available.</p>
 
-      <h2>5. What is the relationship between screen size and power use?</h2>
-      <figure>
-        <img src="assets/Q5_ScatterPlot.png" alt="Scatter plot of screen size versus average mode power">
-      </figure>
-      <p>Power use rises with screen size overall, though the spread grows much wider
-        above about 60 inches.</p>
+				<h2>More context</h2>
+				<p>These questions add background to help you understand the results above.</p>
 
-      <h2>6. What is the relationship between star rating and screen size?</h2>
-      <figure>
-        <img src="assets/Q6_ScatterPlot.png" alt="Scatter plot of screen size versus star rating">
-      </figure>
-      <p>Star ratings are spread widely across every screen size, so there's no strong or
-        consistent trend between size and efficiency rating.</p>
+				<h3 class="question">Q5. What is the relationship between screen size and power use?</h3>
+				<figure>
+					<img src="assets/Q5_ScatterPlot.png" alt="Scatter plot of screen size versus average mode power">
+					<figcaption>Fig 5. Scatter plot: each dot is one TV, showing its size and power use</figcaption>
+				</figure>
+				<p class="answer">Power use generally increases with screen size. Small screens (under 40 inches) mostly use under 50, while very large screens (85 inches and above) can use 200 or more, and the spread of values becomes much wider.</p>
 
-      <h2>7. Are there differences in power consumption between brands?</h2>
-      <div class="figure-grid">
-        <figure>
-          <img src="assets/Q7_BarChart.png" alt="Bar chart of average mode power by brand">
-        </figure>
-        <figure>
-          <img src="assets/Q7_BoxPlot.png" alt="Box plot of mode power distribution by brand">
-        </figure>
-      </div>
-      <p>Average power use differs noticeably by brand &mdash; Spark Electronics and Emete
-        sit highest &mdash; and the box plot shows most brands still have a wide spread of
-        power values across their own model range.</p>
-    </section>
+				<h3 class="question">Q6. What is the relationship between star rating and screen size?</h3>
+				<figure>
+					<img src="assets/Q6_ScatterPlot.png" alt="Scatter plot of screen size versus star rating">
+					<figcaption>Fig 6. Scatter plot: each dot is one TV, showing its size and star rating</figcaption>
+				</figure>
+				<p class="answer">There is no clear relationship. Star ratings are spread from about 1.5 to 9 across the screen sizes, with most between about 3 and 7.</p>
 
-    <!-- ================= ABOUT US PAGE ================= -->
-    <section id="about" class="page" hidden>
-      <h1>About Us</h1>
+				<h3 class="question">Q7. Are there differences in power consumption between brands?</h3>
+				<figure>
+					<img src="assets/Q7_BarChart.png" alt="Bar chart of average mode power by brand">
+					<figcaption>Fig 7a. Bar chart: average power use of the highest-consuming brands</figcaption>
+				</figure>
+				<figure>
+					<img src="assets/Q7_BoxPlot.png" alt="Box plot of mode power distribution by brand">
+					<figcaption>Fig 7b. Box plot: range of power use across the models of each brand</figcaption>
+				</figure>
+				<p class="answer">Yes. Spark Electronics has the highest average power consumption (233.45), followed by Emete (182.03), while the other top brands are between about 130 and 155. The box plot shows that most brands also have a wide spread of values across their own models.</p>
 
-      <div class="hero">
-        <p>
-          Appliance Energy Watch is a student project created for COS30045 Data Visualisation,
-          exploring how household appliance data &mdash; particularly around televisions &mdash;
-          could be presented to help Australian households understand their energy consumption.
-        </p>
-      </div>
+				<h2>Conclusion</h2>
+				<div class="hero">
+					<p>
+						When choosing a TV, balance size, brand and efficiency. LCD (LED) TVs
+						at 55 to 65 inches are the most common, larger screens use more power,
+						and star ratings vary widely, so check the Energy Rating label before
+						buying.
+					</p>
+				</div>
+			</section>
 
-      <h2>Project Goals</h2>
-      <ul>
-        <li>Practice building a multi-page website with a shared navigation structure.</li>
-        <li>Use JavaScript to control page/content switching without full page reloads.</li>
-        <li>Host the resulting data visualisations, with room to add more from future tasks.</li>
-      </ul>
+		<!-- ================= ABOUT US PAGE ================= -->
+			<section id="about" class="page" hidden>
+				<h1>About Us</h1>
 
-      <h2>Author</h2>
-      <p>Phyllis Yong &mdash; COS30045 Data Visualisation</p>
+				<div class="hero">
+					<p>
+						Appliance Energy Watch is a small website built for COS30045 Data
+						Visualisation. It explores how much energy household appliances use in
+						the Australian market, and is a place to host the data visualisations
+						created across the unit.
+					</p>
+				</div>
 
-      <h2>Use of Generative AI</h2>
-      <p>
-        This project used Claude Code, an AI coding assistant, to help generate parts of
-        the HTML, CSS and JavaScript. See the project <code>README.md</code> file for detailed
-        notes and a reflection on how GenAI tools were used during development.
-      </p>
-    </section>
+				<h2>Project Goals</h2>
+				<ul>
+					<li>
+						Practice building a multi-page website with a shared navigation
+						structure.
+					</li>
+					<li>
+						Use JavaScript to control page/content switching without full page
+						reloads.
+					</li>
+					<li>
+						Host the resulting data visualisations, with room to add more from
+						future tasks.
+					</li>
+				</ul>
 
-  </main>
+				<h2>Author</h2>
+				<p>Phyllis Yong &mdash; COS30045 Data Visualisation</p>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Phyllis Yong &mdash; Appliance Energy Watch.
-      Built with the help of GenAI tools (Claude Code) &mdash; see README.md for details.</p>
-  </footer>
+				<h2>Use of Generative AI</h2>
+				<p>
+					This project used Claude Code, an AI coding assistant, to help
+					generate parts of the HTML, CSS and JavaScript. See the project
+					<code>README.md</code> file for detailed notes and a reflection on how
+					GenAI tools were used during development.
+				</p>
+			</section>
+		</main>
 
-  <!-- Lightbox: shows a clicked chart image bigger. Starts hidden. -->
-  <div id="lightbox" hidden>
-    <img id="lightbox-img" src="" alt="Enlarged chart">
-  </div>
+		<footer>
+			<p>
+				&copy; <span id="year"></span> Phyllis Yong &mdash; Appliance Energy
+				Watch. Built with the help of GenAI tools (Claude Code) &mdash; see
+				README.md for details.
+			</p>
+		</footer>
 
-  <script src="js/script.js"></script>
-</body>
+		<script src="js/script.js"></script>
+	</body>
 </html>
