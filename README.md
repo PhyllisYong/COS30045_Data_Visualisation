@@ -34,12 +34,12 @@ vercel.json        # serves televisions.html at the site root
 
 Colours match the supplied logo (a lightning bolt in a pale gold circle with a brown outline):
 
-| Colour | Hex | Used for |
-|---|---|---|
-| Brown | `#6b5637` | header, headings, borders |
-| Pale gold | `#f6e7a1` | active nav link, circle background |
-| Orange | `#e9a23b` | accent, hover state, lightning bolt |
-| Dark brown | `#4a3b26` | footer background |
+| Colour     | Hex       | Used for                            |
+| ---------- | --------- | ----------------------------------- |
+| Brown      | `#6b5637` | header, headings, borders           |
+| Pale gold  | `#f6e7a1` | active nav link, circle background  |
+| Orange     | `#e9a23b` | accent, hover state, lightning bolt |
+| Dark brown | `#4a3b26` | footer background                   |
 
 ---
 
@@ -54,9 +54,9 @@ energy-efficient, good-sized TV and prefer simple visual insights over technical
 2. What screen sizes are most common?
 3. Which brands have the most models?
 4. Which screen technology uses the least power?
-5. How does screen size affect power use? *(context)*
-6. Do larger TVs mean worse star ratings? *(context)*
-7. Do brands differ in power consumption? *(extra detail)*
+5. How does screen size affect power use? _(context)_
+6. Do larger TVs mean worse star ratings? _(context)_
+7. Do brands differ in power consumption? _(extra detail)_
 
 **How it is told:** the Televisions page opens with an intro for the audience, presents the
 charts in that order (each with a caption and a plain-language takeaway), and ends with a
@@ -64,8 +64,8 @@ conclusion: balance size, brand and efficiency, and check the Energy Rating labe
 
 ## About the data
 
-**Data source.** Australian Government, *Energy Rating Data for household appliances &ndash;
-Labelled Products* (Televisions dataset), published on data.gov.au as a CSV file with a
+**Data source.** Australian Government, _Energy Rating Data for household appliances &ndash;
+Labelled Products_ (Televisions dataset), published on data.gov.au as a CSV file with a
 DOCX metadata file describing the fields.
 
 **Data processing.** The CSV was processed and visualised in KNIME. The charts count and summarise fields from the CSV: screen technology
@@ -79,7 +79,8 @@ images into `assets/`.
 it is openly published by the government, so no personal information is used.
 
 **Accuracy and limitations.**
-- The data counts *registered models*, not TVs sold, so popular models are not weighted more.
+
+- The data counts _registered models_, not TVs sold, so popular models are not weighted more.
 - Some brands appear under more than one name (for example Samsung and Samsung Electronics
   are separate bars).
 - Q2, Q3 and Q7 (bar chart) show only the top 10 sizes or brands, not everything in the data.
@@ -96,10 +97,10 @@ written to avoid overstating what the charts show.
 
 ## AI Declaration
 
-This project was built with the help of Claude Code, an AI coding assistant (not GitHub
-Copilot).
+This project was built with the help of GitHub Copilot, an AI coding assistant.
 
 **What the AI was used for**
+
 - Scaffolding the HTML structure for the three pages and the shared header, nav and footer.
 - Writing the JavaScript that swaps between pages (hash routing, active link highlighting).
 - Writing the CSS, including a palette derived from the logo.
@@ -109,6 +110,7 @@ Copilot).
 - Drafting the general placeholder content on the Home page and this README.
 
 **What I checked or changed myself**
+
 - Chose the audience, questions and storyline (Miro storyboard) and produced the charts.
 - Checked every takeaway against the chart values, which caught wrong figures in early drafts.
 - Reviewed the navigation code to make sure pages are swapped with JavaScript, not by loading
@@ -123,4 +125,4 @@ verify its output rather than trust it.
 
 ---
 
-*&copy; 2026 Phyllis Yong*
+_&copy; 2026 Phyllis Yong_
